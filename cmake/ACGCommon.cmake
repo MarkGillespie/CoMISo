@@ -42,10 +42,10 @@ endif()
 
 # read version from file
 macro (acg_get_version)
-    if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${ARGN}/VERSION")
-      file (READ "${CMAKE_CURRENT_SOURCE_DIR}/${ARGN}/VERSION" _file)
+    if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${ARGN}/COMISO_VERSION")
+      file (READ "${CMAKE_CURRENT_SOURCE_DIR}/${ARGN}/COMISO_VERSION" _file)
     else ()
-      file (READ "${CMAKE_CURRENT_SOURCE_DIR}/VERSION" _file)
+      file (READ "${CMAKE_CURRENT_SOURCE_DIR}/COMISO_VERSION" _file)
     endif ()
 
     string (
