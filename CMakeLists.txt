@@ -423,10 +423,14 @@ if (NOT APPLE)
 else(NOT APPLE)
   target_link_directories (CoMISo PUBLIC
     ${COMISO_LINK_DIRECTORIES}
-	  )
+  )
 	target_link_libraries (CoMISo
 	  ${COMISO_LINK_LIBRARIES}
-	)
+	  )
+
+  list( APPEND COMISO_INCLUDE_DIRECTORIES "${CMAKE_CURRENT_SOURCE_DIR}/.." )
+  message("INCLUDES: ${COMISO_INCLUDE_DIRECTORIES}")
+  target_include_directories (CoMISo PUBLIC ${COMISO_INCLUDE_DIRECTORIES})
 endif(NOT APPLE)
 
 # display results
