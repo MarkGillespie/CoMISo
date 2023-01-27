@@ -113,6 +113,16 @@ else ()
 endif ()
 
 find_package (SUITESPARSE)
+# borrowed from geometry-central
+# The SuiteSparse logic above doesn't look for UMFpack, but we need it.
+string(REGEX REPLACE "cholmod" "umfpack" UMFPACK_LIBRARY ${CHOLMOD_LIBRARY})
+message("-- Guesstimated umfpack location as: ${UMFPACK_LIBRARY}")
+if(EXISTS ${UMFPACK_LIBRARY})
+  list(APPEND SUITESPARSE_LIBRARIES ${UMFPACK_LIBRARY})
+else()
+  message(WARNING "UMFPack guess failed, so we don't actually have SUITESPARSE support.")
+  set (SUITESPARSE_FOUND FALSE)
+endif()
 if (SUITESPARSE_FOUND )
   list (APPEND NEED_LAPACK "SUITESPARSE")
   
