@@ -417,10 +417,13 @@ endif()
 add_library (CoMISo SHARED ${uic_targets} ${sources} ${headers} ${moc_targets})
 
 if (NOT APPLE)
-	target_link_libraries (CoMISo 
+	target_link_libraries (CoMISo
 	  ${COMISO_LINK_LIBRARIES}
 	)
 else(NOT APPLE)
+  target_link_directories (CoMISo PUBLIC
+    ${COMISO_LINK_DIRECTORIES}
+	  )
 	target_link_libraries (CoMISo
 	  ${COMISO_LINK_LIBRARIES}
 	)
