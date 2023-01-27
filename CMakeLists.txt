@@ -414,7 +414,7 @@ acg_qt5_automoc (moc_targets ${headers})
 list (APPEND COMISO_LINK_LIBRARIES ${QT_LIBRARIES})
 endif()
 
-acg_add_library (CoMISo SHARED ${uic_targets} ${sources} ${headers} ${moc_targets})
+add_library (CoMISo SHARED ${uic_targets} ${sources} ${headers} ${moc_targets})
 
 if (NOT APPLE)
 	target_link_libraries (CoMISo 
