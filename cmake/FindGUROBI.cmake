@@ -14,6 +14,7 @@ find_path(GUROBI_INCLUDE_DIR
           PATHS
           "${GUROBI_BASE}/include"
           "$ENV{GUROBI_HOME}/include"
+          "/Library/gurobi1000/macos_universal2/include"
           )
 
 get_filename_component(GUROBI_LIB_DIR "${GUROBI_INCLUDE_DIR}/../lib" ABSOLUTE)

@@ -59,7 +59,7 @@ IF(CGAL_INCLUDE_DIR )
   ELSEIF( APPLE)
     find_path(CGAL_LIBRARY_DIR 
                 NAMES "libCGAL.dylib"
-                PATHS "/opt/local/lib/"
+                PATHS "/opt/local/lib/" "${CGAL_INCLUDE_DIR}/../lib"
                 DOC "Directory containing the CGAL library"
                ) 
     list ( APPEND CGAL_LIBRARIES CGAL CGAL_Core CGAL_ImageIO mpfr )
