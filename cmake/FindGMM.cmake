@@ -16,6 +16,7 @@ find_path( GMM_INCLUDE_DIR
                  /usr/include
                  /usr/include
                  /usr/local/include
+                 "${CMAKE_CURRENT_SOURCE_DIR}/ext/gmm-4.2/include"
                  ~/sw/gmm-4.1/include
 		 "c:\\libs\\gmm-4.1\\include"
                  "c:\\libs\\gmm-3.0\\include"
